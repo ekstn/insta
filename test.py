@@ -1,16 +1,26 @@
-from random import randrange
+st = int(input("일일 걸음 수를 입력하세요 : "))
 
-a = int(input('답을 입력해 주세요 : '))
-b = randrange(1, 1000)
-life = 15
+if st < 10000:
+    print(f'목표에 도달하기 위해 더 많이 움직이세요. {10000-st}보 남았습니다.')
 
-while b != a:
-    if a < b:
-        print(f'{a}보다 큽니다.')
-        a = int(input('답을 다시 입력해 주세요 : '))
+elif st <20000:
+    print('훌륭합니다! 목표를 달성했어요.')
+
+else:
+    print(f'대단해요 목표를 {st - 20000}보 초과 달성 했습니다.')
+
+s = input('성별을 입력해 주세요(남성/여성) : ')
+
+w = int(input('오늘 마신 물의 양을 입력해 주세요(ml) : '))
+
+if s =='남성':
+    if w >= 3700:
+        print('오늘 물을 충분히 마셨습니다.')
     else:
-        print(f'{a}보다 작습니다.')
-        a = int(input('답을 다시 입력해 주세요 : '))
+        print(f'오늘 물을 {3700-w}ml 더 마셔야 합니다..')
 
-
-print('정답입니다.')
+else:
+    if w >= 2700:
+        print('오늘 물을 충분히 마셨습니다.')
+    else:
+        print(f'오늘 물을 {2700-w}ml 더 마셔야 합니다..')
